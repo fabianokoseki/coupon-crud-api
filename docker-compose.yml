@@ -1,0 +1,18 @@
+services:
+  coupon-api:
+    image: fkoseki/coupon-crud-api:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    network_mode: host
+    env_file:
+      - .env
+
+  database:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    network_mode: host
+    env_file:
+      - .env

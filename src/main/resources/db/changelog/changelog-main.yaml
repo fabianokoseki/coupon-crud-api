@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Fabiano
+      changes:
+        - createTable:
+            tableName: coupon
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(45)
+              - column:
+                  name: code
+                  type: varchar(45)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: minimum_amount_to_apply
+                  type: bigint
+              - column:
+                  name: start_at
+                  type: datetime
+              - column:
+                  name: finish_at
+                  type: datetime
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: quantity
+                  type: int unsigned
+                  constraints:
+                    nullable: false
+              - column:
+                  name: usages
+                  type: int
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: discount_type
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: int
+              - column:
+                  name: created_at
+                  type: datetime
+              - column:
+                  name: updated_at
+                  type: datetime
